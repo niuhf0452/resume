@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Haifeng's Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Source+Sans+Pro:400,400i"
+        rel="stylesheet">
+
+<body>
+    <div class="page">
+        <div class="section row head">
+            <div class="avatar">
+                <img src="avatar.JPG">
+            </div>
+            <h1 class="name">Haifeng Niu</h1>
+            <div class="light">A fat guy coding for fun.</div>
+            <div>
+                <span>niuhf0452@gmail.com</span>
+                <span class="phone">+86 13810491980</span>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">Interests</h2>
+            <div class="section-text col-right" style="line-height: 48px">
+                <span class="key">Full stack developer</span>
+                <span class="key">Java / Kotlin / Scala</span>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">Skills</h2>
+            <div class="section-text col-right row">
+                <ul class="skills" style="width:25%">
+                    <li>Java, Kotlin, Scala</li>
+                    <li>Vert.x, Guice, gRPC</li>
+                    <li>MySQL, Kafka, Ignite</li>
+                </ul>
+                <ul class="skills" style="width:35%">
+                    <li>Javascript, Typescript</li>
+                    <li>ReactJS</li>
+                </ul>
+                <ul class="skills">
+                    <li>Jaeger, Prometheus, Grafana</li>
+                    <li>Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">Experience</h2>
+            <div class="section-text col-right">
+                <div class="row">
+                    <div class="col">
+                        <h3>Beijing Hose Information Technology, Inc.</h3>
+                    </div>
+                </div>
+                <div class="row subsection">
+                    <div class="emph col">Chief Architect</div>
+                    <div class="col-right light">2015 - 2019</div>
+                </div>
+                <div>Join to startup team, develop the first version of product as full stack developer, then responsible for architecture design work.</div>
+                <ul class="desc">
+                    <li>Responsible for architecture design work of SaaS product Ekuaibao. (https://www.ekuaibao.com)</li>
+                    <li>Responsible for open source library integration and framework development.</li>
+                    <li>Participate in business layer design.</li>
+                    <li>Improve operations with containers and kubernetes.</li>
+                </ul>
+            </div>
+            <div class="section-text col-right">
+                <div class="row">
+                    <div class="col">
+                        <h3>Beijing Weizhi Technology, Inc.</h3>
+                    </div>
+                </div>
+                <div class="row subsection">
+                    <div class="emph col">Cofounder</div>
+                    <div class="col-right light">2013 - 2015</div>
+                </div>
+                <div>Start a small company with my ex workmate, but it failed.</div>
+            </div>
+            <div class="section-text col-right">
+                <div class="row">
+                    <div class="col">
+                        <h3>Beijing Join-Cheer Software Co.,Ltd.</h3>
+                    </div>
+                </div>
+                <div class="row subsection">
+                    <div class="emph col">Software Development Engineer</div>
+                    <div class="col-right light">2007 - 2013</div>
+                </div>
+                <div>Worked in Logical Framework department. Mainly responsible for developing SQL-like data access language. Also participate in developing Cache, Software Transactional Memory, Cluster and other features. </div>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">Education</h2>
+            <div class="section-text col-right subsection">
+                <div class="col">
+                    <h3>Bachelor of Engineering in Computer Science and Technology</h3>
+                    <div>Beijing University of Posts and Telecommunications</div>
+                </div>
+                <div class="col-right light">2003 - 2007</div>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">Features</h2>
+            <div class="section-text col-right">
+                <ul>
+                    <li>
+                        <span>Ability to learn new things and apply edge-cutting software technology.</span>
+                        <p>Eg. To store customized bill form data, I write whole data as a single document into MySQL JSON type field. That works great.</p>
+                        <p>Eg. We use kotlin coroutine and vert.x to improve our framework. Coroutine provide better development experience than traditional thread pool pattern, and promise pattern. It also has problems, like debugger doesn't work well. So we don't use it in business layer.</p>
+                    </li>
+                    <li>
+                        <span>Experience of middleware development.</span>
+                        <p>Eg. I built a framework with guice, vert.x, gRPC, opentracing and use it in our product. Compare with spring, it has better development experience, like fast boot speed, type safe http / rpc call, client driven query with privilege check, and so on.</p>
+                    </li>
+                    <li>
+                        <span>Ability to analyze problem and find out solution.</span>
+                        <p>Eg. We use Maxwell which is open sourced by Zendesk to capture mysql binlog. I fix a few issues of it and submit pull requests on github.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

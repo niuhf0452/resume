@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>牛海锋的简历</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Source+Sans+Pro:400,400i"
+        rel="stylesheet">
+
+<body>
+    <div class="page">
+        <div class="section row head">
+            <div class="avatar">
+                <img src="avatar.JPG">
+            </div>
+            <h1 class="name">牛海锋</h1>
+            <div class="light">一个从coding中寻找快乐的胖子。</div>
+            <div>
+                <span>niuhf0452@gmail.com</span>
+                <span class="phone">+86 13810491980</span>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">求职意向</h2>
+            <div class="section-text col-right" style="line-height: 48px">
+                <span class="key">资深后端开发</span>
+                <span class="key">全栈开发</span>
+                <span class="key">Java / Kotlin / Scala</span>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">技能</h2>
+            <div class="section-text col-right row">
+                <ul class="skills" style="width:25%">
+                    <li>Java, Kotlin, Scala</li>
+                    <li>Vert.x, Guice, gRPC</li>
+                    <li>MySQL, Kafka, Ignite</li>
+                </ul>
+                <ul class="skills" style="width:35%">
+                    <li>Javascript, Typescript</li>
+                    <li>ReactJS</li>
+                </ul>
+                <ul class="skills">
+                    <li>Jaeger, Prometheus, Grafana</li>
+                    <li>Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">工作经历</h2>
+            <div class="section-text col-right">
+                <div class="row">
+                    <div class="col">
+                        <h3>北京合思信息技术有限公司</h3>
+                    </div>
+                </div>
+                <div class="row subsection">
+                    <div class="emph col">总架构师</div>
+                    <div class="col-right light">2015 - 2019</div>
+                </div>
+                <div>初创团队，参与首个版本全栈开发，后负责架构设计工作。</div>
+                <br>
+                <div>负责总体架构设计和技术框架开发。</div>
+                <ul class="desc">
+                    <li>规划数据库、缓存、EventBus、定时任务等技术使用方案。</li>
+                    <li>开发技术框架集成开源组件，为业务层提供API。</li>
+                    <li>集成性能监控、日志收集、调用跟踪、限流熔断等运维辅助功能。</li>
+                </ul>
+                <br>
+                <div>参与业务设计讨论并提出建议。</div>
+                <ul class="desc">
+                    <li>提出产品技术演进方向，讨论近期和远期技术规划。</li>
+                    <li>分析业务需求，指出技术难点和开发成本，提供技术方案。</li>
+                </ul>
+                <br>
+                <div>推进运维架构迭代。</div>
+                <ul class="desc">
+                    <li>引入容器技术，先利用rancher管理生产环境集群，后推动kubernetes上线。</li>
+                    <li>制定应用监控方案，利用jaeger + prometheus + grafana构建监控体系。</li>
+                </ul>
+            </div>
+            <div class="section-text col-right">
+                <div class="row">
+                    <div class="col">
+                        <h3>北京久其软件股份有限公司</h3>
+                    </div>
+                </div>
+                <div class="row subsection">
+                    <div class="emph col">软件开发工程师</div>
+                    <div class="col-right light">2007 - 2013</div>
+                </div>
+                <div>任职于研究院逻辑框架部，参与技术框架设计和开发工作。主要负责类SQL语言的设计和解析器开发，参与实现缓存和内存事务特性，参与实现集群架构。</div>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">教育经历</h2>
+            <div class="section-text col-right subsection">
+                <div class="col">
+                    <h3>本科</h3>
+                    <div>北京邮电大学，计算机科学与技术专业</div>
+                </div>
+                <div class="col-right light">2003 - 2007</div>
+            </div>
+        </div>
+        <div class="section row">
+            <h2 class="col">擅长的工作</h2>
+            <div class="section-text col-right">
+                <ul>
+                    <li>
+                        <span>学习、应用新技术，探索性工作。</span>
+                        <p>在构建“易快报”产品的过程中，我独立完成SaaS技术方案细节设计。例如，为了支撑企业用户单据结构个性化需求，我使用了MySQL的JSON存储特性，取得较好效果。再例如，在早期开始使用容器技术，并使用rancher管理容器集群，后期推动kubernetes应用，目前“易快报”团队的测试环境和SaaS生产环境全部使用kubernetes进行管理。
+                        </p>
+                    </li>
+                    <li>
+                        <span>框架设计和开发。</span>
+                        <p>在之前的工作中，我主导集成guice、vert.x、gRPC、opentracing等开源技术形成框架，另一方面在此基础上设计了通用查询、权限管理、配置管理等功能特性，为业务开发提供快速、可复用、高质量的基础服务。
+                        </p>
+                    </li>
+                    <li>
+                        <span>分析问题，找出解决方案。</span>
+                        <p>利用开发经验，我能够快速定位问题，分析问题根本原因。例如，在使用zendesk
+                            maxwell产品时，出现序列化错误的情况。我通过阅读maxwell源代码发现它对JSON类型字段的处理存在缺陷，修复后提交pull
+                            request。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
