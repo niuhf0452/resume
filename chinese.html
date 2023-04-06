@@ -15,40 +15,71 @@
                 <img src="avatar.JPG">
             </div>
             <h1 class="name">牛海锋</h1>
-            <div class="light">一个从coding中寻找快乐的胖子。</div>
+            <div class="light">从coding中寻找快乐</div>
             <div>
                 <span>niuhf0452@gmail.com</span>
                 <span class="phone">+86 13810491980</span>
             </div>
         </div>
         <div class="section row">
-            <h2 class="col">求职意向</h2>
-            <div class="section-text col-right" style="line-height: 48px">
-                <span class="key">资深后端开发</span>
-                <span class="key">全栈开发</span>
-                <span class="key">Java / Kotlin / Scala</span>
-            </div>
+            <h2 class="col">我的优势</h2>
+            <ul class="section-text col-right">
+                <li>架构：有较强的需求分析和技术架构设计能力。</li>
+                <li>全栈：能够熟练使用常见web技术和服务端技术进行开发，了解基于Jenkins/Spinnaker的CI/CD流程，熟悉基于Kubernetes的部署和运维。</li>
+                <li>自驱：学习能力强，掌握Scala FP，喜欢学习新技术。</li>
+            </ul>
         </div>
         <div class="section row">
             <h2 class="col">技能</h2>
             <div class="section-text col-right row">
-                <ul class="skills" style="width:25%">
+                <ul class="skills" style="width:35%">
                     <li>Java, Kotlin, Scala</li>
-                    <li>Vert.x, Guice, gRPC</li>
-                    <li>MySQL, Kafka, Ignite</li>
+                    <li>Cats Effect, http4s, Vert.x</li>
+                    <li>AWS DynamoDB, MySQL, Kafka</li>
                 </ul>
                 <ul class="skills" style="width:35%">
-                    <li>Javascript, Typescript</li>
+                    <li>InfluxDB, Grafana</li>
+                    <li>Terraform, Kubernetes</li>
                     <li>ReactJS</li>
-                </ul>
-                <ul class="skills">
-                    <li>Jaeger, Prometheus, Grafana</li>
-                    <li>Kubernetes</li>
                 </ul>
             </div>
         </div>
         <div class="section row">
             <h2 class="col">工作经历</h2>
+            <div class="section-text col-right">
+                <div class="row">
+                    <div class="col">
+                        <h3>北京葫芦软件技术开发有限公司</h3>
+                    </div>
+                </div>
+                <div class="row subsection">
+                    <div class="emph col">Lead Software Engineer</div>
+                    <div class="col-right light">2019 - 2023</div>
+                </div>
+                <div>Identity功能开发</div>
+                <ul class="desc">
+                    <li>参与Hulu和Disney Streaming (DS)用户认证方面的日常开发工作。包括提出技术方案、制定计划、写代码、部署上线和后期的运维工作。</li>
+                    <li>例如，参与了Hulu和DS的用户合并项目，领导其中的用户登录前端UI和后端服务的开发工作，实现了同一个用户账号可以登录Hulu、Disney+、Star+等Disney旗下多个产品。</li>
+                    <li>又例如，做为主程开发了登录异常检测服务，引入Google reCAPTCHA、基于规则和机器学习的多种策略防御来自互联网的对登录服务的攻击。</li>
+                </ul>
+                <div>Oncall</div>
+                <ul class="desc">
+                    <li>轮班负责解决后端服务日常运行故障。</li>
+                    <li>两次参与SuperBowl直播过程中Hulu identity服务的运维保障工作。</li>
+                </ul>
+                <div>参与技术设计评审</div>
+                <ul class="desc">
+                    <li>作为Principals & Architects成员，参与其他团队技术设计评审，了解其他团队的关键业务的设计和技术方案使用情况，促进本团队和其他团队协作。</li>
+                    <li>参与本团队内部的技术设计评审。</li>
+                    <li>对关键PR进行code review，监督设计落地，针对可维护性提出改进建议，指出代码结构问题和library使用的问题。</li>
+                </ul>
+                <div>推进新技术方案和最佳实践的应用</div>
+                <ul class="desc">
+                    <li>向团队开发人员讲解新技术方案，分析在项目中应用的可行性，提供其他项目的应用实例作为参考。</li>
+                    <li>通过code review推进最佳实践落地。</li>
+                    <li>针对Scala FP组织定期的学习会议，做为主讲人之一带领大家学习FP、Cats Effect以及一些应用实例。</li>
+                </ul>
+            </div>
             <div class="section-text col-right">
                 <div class="row">
                     <div class="col">
@@ -59,26 +90,16 @@
                     <div class="emph col">总架构师</div>
                     <div class="col-right light">2015 - 2019</div>
                 </div>
-                <div>初创团队，参与首个版本全栈开发，后负责架构设计工作。</div>
-                <br>
-                <div>负责总体架构设计和技术框架开发。</div>
-                <ul class="desc">
-                    <li>规划数据库、缓存、EventBus、定时任务等技术使用方案。</li>
-                    <li>开发技术框架集成开源组件，为业务层提供API。</li>
-                    <li>集成性能监控、日志收集、调用跟踪、限流熔断等运维辅助功能。</li>
-                </ul>
-                <br>
-                <div>参与业务设计讨论并提出建议。</div>
-                <ul class="desc">
-                    <li>提出产品技术演进方向，讨论近期和远期技术规划。</li>
-                    <li>分析业务需求，指出技术难点和开发成本，提供技术方案。</li>
-                </ul>
-                <br>
-                <div>推进运维架构迭代。</div>
-                <ul class="desc">
-                    <li>引入容器技术，先利用rancher管理生产环境集群，后推动kubernetes上线。</li>
-                    <li>制定应用监控方案，利用jaeger + prometheus + grafana构建监控体系。</li>
-                </ul>
+                <div class="desc">
+                    初创团队，参与首个版本全栈开发，后负责架构设计工作。<br>
+                    主要参与：
+                    提出产品技术演进方向，讨论近期和远期技术规划；
+                    分析业务需求，指出技术难点和开发成本，提供技术方案；
+                    集成开源组件，为业务层提供API；
+                    开发数据访问、缓存、EventBus、定时任务等技术组件；
+                    利用Jaeger + Prometheus + Grafana构建监控体系；
+                    引入容器技术，推动Kubernetes上线。
+                </div>
             </div>
             <div class="section-text col-right">
                 <div class="row">
@@ -90,7 +111,11 @@
                     <div class="emph col">软件开发工程师</div>
                     <div class="col-right light">2007 - 2013</div>
                 </div>
-                <div>任职于研究院逻辑框架部，参与技术框架设计和开发工作。主要负责类SQL语言的设计和解析器开发，参与实现缓存和内存事务特性，参与实现集群架构。</div>
+                <div class="desc">
+                    任职于研究院逻辑框架部，参与技术框架设计和开发工作。
+                    主要负责类SQL语言的设计和解析器开发，参与实现缓存和内存事务特性，
+                    参与实现集群架构。
+                </div>
             </div>
         </div>
         <div class="section row">
@@ -101,30 +126,6 @@
                     <div>北京邮电大学，计算机科学与技术专业</div>
                 </div>
                 <div class="col-right light">2003 - 2007</div>
-            </div>
-        </div>
-        <div class="section row">
-            <h2 class="col">擅长的工作</h2>
-            <div class="section-text col-right">
-                <ul>
-                    <li>
-                        <span>学习、应用新技术，探索性工作。</span>
-                        <p>在构建“易快报”产品的过程中，我独立完成SaaS技术方案细节设计。例如，为了支撑企业用户单据结构个性化需求，我使用了MySQL的JSON存储特性，取得较好效果。再例如，在早期开始使用容器技术，并使用rancher管理容器集群，后期推动kubernetes应用，目前“易快报”团队的测试环境和SaaS生产环境全部使用kubernetes进行管理。
-                        </p>
-                    </li>
-                    <li>
-                        <span>框架设计和开发。</span>
-                        <p>在之前的工作中，我主导集成guice、vert.x、gRPC、opentracing等开源技术形成框架，另一方面在此基础上设计了通用查询、权限管理、配置管理等功能特性，为业务开发提供快速、可复用、高质量的基础服务。
-                        </p>
-                    </li>
-                    <li>
-                        <span>分析问题，找出解决方案。</span>
-                        <p>利用开发经验，我能够快速定位问题，分析问题根本原因。例如，在使用zendesk
-                            maxwell产品时，出现序列化错误的情况。我通过阅读maxwell源代码发现它对JSON类型字段的处理存在缺陷，修复后提交pull
-                            request。
-                        </p>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
