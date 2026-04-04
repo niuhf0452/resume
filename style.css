@@ -117,6 +117,9 @@ a:hover {
 .subsection {
   margin: 10px 0 5px;
 }
+.paragraph-head {
+  margin: 8px 0 0;
+}
 .desc {
   font-size: 16px;
   color: #444;
@@ -190,17 +193,8 @@ ul.skills li:last-child {
 @media print {
   .page {
     margin: 0;
-    border: initial;
-    border-radius: initial;
-    width: initial;
-    min-height: initial;
-    box-shadow: initial;
-    background: initial;
-    page-break-after: always;
-  }
-  .page-break {
+    width: 21cm;
     page-break-before: always;
-    padding-top: 30px;
   }
 
   body {
@@ -231,10 +225,6 @@ ul.skills li:last-child {
     line-height: 12pt;
     color: #ddd;
   }
-
-  .page {
-    width: 21cm;
-  }
   ul {
     margin: 5px 0 0;
   }
@@ -250,6 +240,24 @@ ul.skills li:last-child {
   }
   .desc {
     font-size: 9pt;
+  }
+  
+  .page:nth-child(2) .section {
+    padding: 4px 0 6px;
+  }
+  .page:nth-child(2) .section-text {
+    margin: 4px 0 4px;
+    line-height: 13.5pt;
+  }
+  .page:nth-child(2) .subsection {
+    margin: 4px 0 0;
+  }
+  .page:nth-child(2) ul {
+    margin: 4px 0 0;
+  }
+  .page:nth-child(2) h3 {
+    margin-top: 3px;
+    margin-bottom: 0;
   }
 
   .contact-info {
