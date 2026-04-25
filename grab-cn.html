@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>牛海锋的简历</title>
+    <title>牛海锋的简历 - Grab AI Platform Architect</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Source+Sans+Pro:400,400i"
         rel="stylesheet">
@@ -25,9 +25,10 @@
 
         <h2>我的优势</h2>
         <ul class="r">
-            <li>知识全面，工程素养高，具备从开发、部署到运维的全流程实践经验。</li>
+            <li>具备从0到1搭建AI产品技术体系的完整经验，主导了AI智能审核产品从技术选型、工程规范到AI辅助开发流程的全链路建设。</li>
+            <li>深耕平台架构设计，主导过两代企业级平台的架构演进，擅长在复杂组织环境中推动跨团队技术变革。</li>
             <li>跨地域协作经验丰富，曾与北京、伦敦、西雅图、俄罗斯/乌克兰多地团队协同推进项目。</li>
-            <li>学习能力强，善于将已有经验迁移至新技术栈，主导建立了AI智能审核产品的技术架构。</li>
+            <li>工程素养高，具备从开发、部署、可观测性到运维的全流程实践经验，注重系统可靠性的结构性提升。</li>
         </ul>
 
         <hr/>
@@ -99,6 +100,51 @@
         <div class="r meta">
             <span class="emph">北京邮电大学，计算机科学与技术专业</span>
             <span class="light">2003 - 2007</span>
+        </div>
+
+        <hr/>
+
+        <h2>案例分析</h2>
+        <div class="r desc">
+            <p>以下案例是我针对Grab AI Platform Architect岗位的核心要求——"Turn AI Into Engineering Leverage"和"Build Reliability That Feels Invisible"——结合自身经历选取的。我理解这个岗位的关键不仅是技术架构能力，更是将AI从工具变为工程杠杆、将可靠性从救火变为体系的能力。三个案例分别展示：如何从零建立AI工程化体系、如何构建可观测性以实现快速故障响应、以及如何将排查经验沉淀为AI驱动的自动化能力。</p>
+        </div>
+
+        <h3 class="r">案例一：为无AI经验的团队建立AI工程化体系</h3>
+        <div class="r meta"><span class="emph">对标：AI-Assisted Engineering / 0→1技术体系搭建</span></div>
+        <div class="r desc">
+            <p><b>背景：</b>公司原有技术体系基于Java微服务，部署复杂、对AI工具不友好。需要为AI智能审核这个全新产品线建立技术体系，团队成员无AI产品开发经验。</p>
+            <p><b>挑战：</b>①如何选择既能支撑AI产品快速迭代、又能让非专业开发背景的成员高效参与的技术架构？②如何让AI工具（Cursor等）在实际开发中真正发挥作用，而不只是玩具？</p>
+            <p><b>决策与行动：</b></p>
+            <ul>
+                <li>选定TypeScript + Next.js单体架构替代Java微服务，理由：端到端类型安全减少接口错误、单一代码库让AI工具拥有完整上下文、部署复杂度从N个服务降为1个。</li>
+                <li>制定三条工程原则——端到端类型安全、避免隐式依赖、减少基础设施依赖——每条原则都直接服务于"让AI能写出正确代码"这个目标。</li>
+                <li>开发dev-standard-compliance、code-review、quality-report等多个自定义skill，在本地和CI环境自动执行。持续调优提示词和工程结构，让AI聚焦关键问题、减少噪音。</li>
+            </ul>
+            <p><b>结果：</b>2个月完成首版上线，5个月交付首个企业客户。团队采用"全员工程师"模式，产品经理、架构师都直接写代码。</p>
+        </div>
+
+        <h3 class="r">案例二：通过可观测性体系实现分钟级故障发现</h3>
+        <div class="r meta"><span class="emph">对标：Reliability Engineering / 检测与恢复</span></div>
+        <div class="r desc">
+            <p><b>背景：</b>AI智能审核产品上线后，需要建立生产环境的可观测性体系，确保问题能被快速发现和定位。</p>
+            <p><b>设计思路：</b>集成OpenTelemetry采集Traces和Metrics，接入观测云平台，使用PromQL查询指标。重点关注三类信号：请求级别的Trace链路、系统级别的资源指标（CPU/内存/网络）、K8s级别的事件流。</p>
+            <p><b>实战验证：</b>上线第二周，监控发现pod持续重启。排查过程：①RPS未增长排除流量突增；②CPU使用率飙升但内存未超限，定位为CPU密集型问题而非内存泄漏；③结合K8s events确认为健康检查超时触发重启；④最终定位为某CPU密集型任务阻塞了Node.js主线程，导致HTTP健康检查无法响应。</p>
+            <p><b>价值：</b>从发现异常到定位根因仅需分钟级。此后将该类任务迁移至Worker线程，并增加CPU使用率的告警规则，形成可复用的排查模式。</p>
+        </div>
+
+        <h3 class="r">案例三：从故障排查到AI自动化分析的闭环</h3>
+        <div class="r meta"><span class="emph">对标：AI-Assisted Engineering / Agentic Operational Automation</span></div>
+        <div class="r desc">
+            <p><b>背景：</b>案例二中定位到Node.js主线程阻塞问题后，我意识到这类问题会反复出现——任何CPU密集型操作都可能阻塞event loop，而现有监控只能看到"CPU高"这个表象，无法直接定位是哪段代码造成的阻塞。</p>
+            <p><b>分阶段推进：</b></p>
+            <ul>
+                <li><b>完善观测能力：</b>为应用和观测系统增加event loop delay指标，开启CPU profiling数据采集。这样不仅能发现"主线程卡了"，还能看到"卡在哪里、卡了多久"。</li>
+                <li><b>修正典型场景：</b>基于新指标发现并修复了多个阻塞场景，积累了从指标异常到代码定位的排查模式。</li>
+                <li><b>将排查经验产品化为AI skill：</b>编写Claude Code skill，实现用自然语言触发自动分析——输入"分析昨天一天的event loop delay问题"，skill自动查询观测数据、关联CPU profiling、生成包含数据可视化和问题归因分析的HTML报告。将原本需要工程师手动查询多个数据源、交叉分析的过程，变成一句话触发的自动化流程。</li>
+                <li><b>在团队中推广：</b>非后端背景的团队成员也能通过skill独立完成性能问题的初步分析，降低了排查门槛。</li>
+            </ul>
+            <p><b>后续规划：</b>定时运行skill生成每日性能日报，自动在任务管理看板上创建待处理任务，实现从"发现问题→分析问题→分配任务"的全链路自动化。</p>
+            <p><b>价值：</b>这个案例体现了一个完整闭环——从解决具体技术问题，到沉淀排查模式，再到用AI将经验产品化为团队可复用的能力。不是简单地"用AI写代码"，而是让AI成为工程运维的杠杆。</p>
         </div>
 
         <hr/>

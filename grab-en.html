@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Haifeng's Resume</title>
+    <title>Haifeng Niu - Grab AI Platform Architect</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Source+Sans+Pro:400,400i"
         rel="stylesheet">
@@ -25,9 +25,10 @@
 
         <h2>Strengths</h2>
         <ul class="r">
-            <li>Comprehensive knowledge with strong engineering discipline; hands-on experience across the full lifecycle from development, deployment to operations.</li>
+            <li>End-to-end experience building AI product tech stacks from scratch — led the full pipeline from technology selection and engineering standards to AI-assisted development workflows.</li>
+            <li>Deep platform architecture expertise, having led two generations of enterprise platform evolution; skilled at driving cross-team technical change in complex organizational environments.</li>
             <li>Extensive cross-regional collaboration experience, having worked with teams in Beijing, London, Seattle, and Russia/Ukraine.</li>
-            <li>Fast learner who effectively transfers existing expertise to new tech stacks; led the technical architecture of an AI-powered audit product.</li>
+            <li>Strong engineering discipline across the full lifecycle — development, deployment, observability, and operations — with a focus on structural reliability improvements.</li>
         </ul>
 
         <hr/>
@@ -45,7 +46,7 @@
                 <li>Grafana, OpenTelemetry</li>
             </ul>
         </div>
-        
+
         <hr/>
 
         <h2>Experience</h2>
@@ -99,6 +100,51 @@
         <div class="r meta">
             <span class="emph">Beijing University of Posts and Telecommunications</span>
             <span class="light">2003 - 2007</span>
+        </div>
+
+        <hr/>
+
+        <h2>Case Studies</h2>
+        <div class="r desc">
+            <p>The following cases are selected based on the core requirements of the Grab AI Platform Architect role — "Turn AI Into Engineering Leverage" and "Build Reliability That Feels Invisible" — combined with my own understanding of the position. I believe the key to this role is not just technical architecture capability, but the ability to transform AI from a tool into engineering leverage, and to evolve reliability from firefighting into a systematic discipline. The three cases demonstrate: building an AI engineering system from zero, establishing observability for rapid fault detection, and productizing troubleshooting experience into AI-driven automation.</p>
+        </div>
+
+        <h3 class="r">Case 1: Building an AI Engineering System for a Team with No AI Experience</h3>
+        <div class="r meta"><span class="emph">Mapped to: AI-Assisted Engineering / 0→1 Tech Stack</span></div>
+        <div class="r desc">
+            <p><b>Context:</b> The company's existing tech stack was based on Java microservices — complex to deploy and unfriendly to AI tooling. We needed to build a tech stack for a brand-new AI-powered audit product, with no prior AI product development experience on the team.</p>
+            <p><b>Challenges:</b> ① How to select an architecture that supports rapid AI product iteration while enabling non-developer backgrounds to contribute effectively? ② How to make AI tools (Cursor, etc.) genuinely productive in daily development, not just novelties?</p>
+            <p><b>Decisions & Actions:</b></p>
+            <ul>
+                <li>Selected TypeScript + Next.js monolith over Java microservices. Rationale: end-to-end type safety reduces interface errors; a single codebase gives AI tools full context; deployment complexity drops from N services to 1.</li>
+                <li>Established three engineering principles — end-to-end type safety, no implicit dependencies, minimal infrastructure dependencies — each directly serving the goal of "enabling AI to write correct code."</li>
+                <li>Developed custom skills (dev-standard-compliance, code-review, quality-report) that run automatically in local and CI environments. Continuously refined prompts and project structure to help AI focus on key issues and reduce noise.</li>
+            </ul>
+            <p><b>Results:</b> First version launched in 2 months; first enterprise customer delivered in 5 months. The team adopted an "everyone is an engineer" model where PMs and architects write code directly.</p>
+        </div>
+
+        <h3 class="r">Case 2: Achieving Minute-Level Fault Detection Through Observability</h3>
+        <div class="r meta"><span class="emph">Mapped to: Reliability Engineering / Detection & Recovery</span></div>
+        <div class="r desc">
+            <p><b>Context:</b> After the AI audit product went live, we needed to build a production observability system to ensure issues could be detected and diagnosed quickly.</p>
+            <p><b>Design Approach:</b> Integrated OpenTelemetry to collect Traces and Metrics, connected to the Guance Cloud platform, using PromQL for querying. Focused on three signal layers: request-level trace chains, system-level resource metrics (CPU/memory/network), and K8s-level event streams.</p>
+            <p><b>Field Validation:</b> In the second week after launch, monitoring detected a pod restart loop. Investigation: ① Stable RPS ruled out traffic spikes; ② CPU usage spiked while memory stayed within limits, pointing to a CPU-bound issue rather than memory leak; ③ K8s events confirmed health check timeouts triggering restarts; ④ Root cause: a CPU-intensive task blocking the Node.js main thread, preventing HTTP health check responses.</p>
+            <p><b>Value:</b> Time from anomaly detection to root cause identification: minutes. Subsequently migrated such tasks to Worker threads and added CPU usage alerting rules, establishing a reusable troubleshooting pattern.</p>
+        </div>
+
+        <h3 class="r">Case 3: From Troubleshooting to AI-Automated Analysis — Closing the Loop</h3>
+        <div class="r meta"><span class="emph">Mapped to: AI-Assisted Engineering / Agentic Operational Automation</span></div>
+        <div class="r desc">
+            <p><b>Context:</b> After identifying the Node.js main thread blocking issue in Case 2, I realized this class of problems would recur — any CPU-intensive operation could block the event loop, but existing monitoring could only show "high CPU" as a symptom, not pinpoint which code caused the blocking.</p>
+            <p><b>Phased Approach:</b></p>
+            <ul>
+                <li><b>Enhanced observability:</b> Added event loop delay metrics and enabled CPU profiling data collection. This enabled not just detecting "the main thread is stuck" but seeing "where it's stuck and for how long."</li>
+                <li><b>Fixed typical scenarios:</b> Discovered and fixed multiple blocking scenarios based on the new metrics, accumulating troubleshooting patterns from metric anomalies to code-level root causes.</li>
+                <li><b>Productized troubleshooting into an AI skill:</b> Built a Claude Code skill that enables natural language-triggered analysis — input "analyze yesterday's event loop delay issues" and the skill automatically queries observability data, correlates CPU profiling, and generates an HTML report with data visualizations and root cause analysis. Transformed a process that required engineers to manually query multiple data sources into a one-sentence automated workflow.</li>
+                <li><b>Team adoption:</b> Team members without backend backgrounds can now independently perform preliminary performance analysis through the skill, lowering the troubleshooting barrier.</li>
+            </ul>
+            <p><b>Next Steps:</b> Schedule the skill to run daily performance reports and automatically create tasks on the project management board, achieving end-to-end automation from "detect issue → analyze issue → assign task."</p>
+            <p><b>Value:</b> This case demonstrates a complete loop — from solving a specific technical problem, to distilling troubleshooting patterns, to using AI to productize experience into reusable team capability. It's not simply "using AI to write code," but making AI an engineering operations lever.</p>
         </div>
 
         <hr/>
